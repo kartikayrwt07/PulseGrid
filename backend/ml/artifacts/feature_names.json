@@ -1,0 +1,22 @@
+[
+  "att_mean",
+  "att_min",
+  "att_recent_2w",
+  "assign_mean",
+  "assign_recent_2w",
+  "internal_mean",
+  "internal_min",
+  "internal_recent_2w",
+  "z_att_mean",
+  "z_assign_mean",
+  "z_internal_mean",
+  "v_composite_latest",
+  "a_composite_latest",
+  "divergence_index",
+  "cusum_triggered",
+  "cusum_shift_magnitude",
+  "ewma_flagged_count",
+  "min_bunk_budget",
+  "sub_75_att_count",
+  "sub_40_ia_count"
+]

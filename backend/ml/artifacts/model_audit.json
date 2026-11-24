@@ -1,0 +1,286 @@
+{
+  "selected_model": "LogisticRegression",
+  "feature_window_weeks": "1-8",
+  "target_window_weeks": "10-12",
+  "train_size": 180,
+  "holdout_size": 60,
+  "class_labels": [
+    "SAFE",
+    "WATCH",
+    "AT_RISK",
+    "CRITICAL"
+  ],
+  "at_risk_recall": 0.913,
+  "macro_f1": 0.598,
+  "roc_auc": 0.8573,
+  "mae": 3.4026,
+  "brier_score": 0.0196,
+  "calibration_curve": [
+    {
+      "bin_mean_pred": 0.0021,
+      "bin_true_freq": 0.0,
+      "bin_count": 48
+    },
+    {
+      "bin_mean_pred": 0.0039,
+      "bin_true_freq": 0.0,
+      "bin_count": 48
+    },
+    {
+      "bin_mean_pred": 0.0595,
+      "bin_true_freq": 0.0625,
+      "bin_count": 48
+    },
+    {
+      "bin_mean_pred": 0.8835,
+      "bin_true_freq": 0.875,
+      "bin_count": 48
+    },
+    {
+      "bin_mean_pred": 0.997,
+      "bin_true_freq": 1.0,
+      "bin_count": 48
+    }
+  ],
+  "confusion_matrix": [
+    [
+      10,
+      7,
+      0,
+      0
+    ],
+    [
+      12,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      10,
+      1
+    ],
+    [
+      0,
+      0,
+      4,
+      6
+    ]
+  ],
+  "model_comparison": [
+    {
+      "model_name": "LogisticRegression",
+      "at_risk_recall": 0.913,
+      "macro_f1": 0.598,
+      "roc_auc": 0.8573,
+      "confusion_matrix": [
+        [
+          10,
+          7,
+          0,
+          0
+        ],
+        [
+          12,
+          8,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          10,
+          1
+        ],
+        [
+          0,
+          0,
+          4,
+          6
+        ]
+      ],
+      "cv_at_risk_recall_mean": 0.9673,
+      "cv_at_risk_recall_std": 0.0268,
+      "cv_macro_f1_mean": 0.6118,
+      "cv_macro_f1_std": 0.0447,
+      "cv_roc_auc_mean": 0.8759
+    },
+    {
+      "model_name": "RandomForestClassifier",
+      "at_risk_recall": 0.8696,
+      "macro_f1": 0.5348,
+      "roc_auc": 0.8798,
+      "confusion_matrix": [
+        [
+          9,
+          8,
+          0,
+          0
+        ],
+        [
+          5,
+          15,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          9,
+          2
+        ],
+        [
+          0,
+          1,
+          7,
+          2
+        ]
+      ],
+      "cv_at_risk_recall_mean": 0.924,
+      "cv_at_risk_recall_std": 0.0562,
+      "cv_macro_f1_mean": 0.6259,
+      "cv_macro_f1_std": 0.045,
+      "cv_roc_auc_mean": 0.8823
+    },
+    {
+      "model_name": "GradientBoostingClassifier",
+      "at_risk_recall": 0.913,
+      "macro_f1": 0.5595,
+      "roc_auc": 0.8681,
+      "confusion_matrix": [
+        [
+          7,
+          10,
+          0,
+          0
+        ],
+        [
+          8,
+          12,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          9,
+          2
+        ],
+        [
+          0,
+          0,
+          5,
+          5
+        ]
+      ],
+      "cv_at_risk_recall_mean": 0.9567,
+      "cv_at_risk_recall_std": 0.0217,
+      "cv_macro_f1_mean": 0.5973,
+      "cv_macro_f1_std": 0.0546,
+      "cv_roc_auc_mean": 0.8623
+    }
+  ],
+  "feature_importances": [
+    {
+      "feature": "sub_75_att_count",
+      "label": "Subjects Below 75% Attendance",
+      "importance": 0.0979
+    },
+    {
+      "feature": "min_bunk_budget",
+      "label": "Minimum Subject Bunk Budget",
+      "importance": 0.0908
+    },
+    {
+      "feature": "internal_recent_2w",
+      "label": "Recent 2-Week Internal Score",
+      "importance": 0.0788
+    },
+    {
+      "feature": "att_min",
+      "label": "Lowest Subject Attendance %",
+      "importance": 0.076
+    },
+    {
+      "feature": "att_recent_2w",
+      "label": "Recent 2-Week Attendance %",
+      "importance": 0.0678
+    },
+    {
+      "feature": "z_internal_mean",
+      "label": "Cohort Internal Z-Score",
+      "importance": 0.0631
+    },
+    {
+      "feature": "internal_mean",
+      "label": "Overall Internal Exam Score",
+      "importance": 0.063
+    },
+    {
+      "feature": "v_composite_latest",
+      "label": "3-Week Z-Score Velocity",
+      "importance": 0.0513
+    },
+    {
+      "feature": "divergence_index",
+      "label": "Assignment-Internal Divergence",
+      "importance": 0.0492
+    },
+    {
+      "feature": "z_att_mean",
+      "label": "Cohort Attendance Z-Score",
+      "importance": 0.0474
+    },
+    {
+      "feature": "att_mean",
+      "label": "Overall Attendance %",
+      "importance": 0.0452
+    },
+    {
+      "feature": "assign_recent_2w",
+      "label": "Recent 2-Week Assignment Score",
+      "importance": 0.0406
+    },
+    {
+      "feature": "internal_min",
+      "label": "Lowest Subject Internal Score",
+      "importance": 0.0393
+    },
+    {
+      "feature": "cusum_triggered",
+      "label": "CUSUM Shift Detected",
+      "importance": 0.0356
+    },
+    {
+      "feature": "sub_40_ia_count",
+      "label": "Subjects Below 40% Internals",
+      "importance": 0.03
+    },
+    {
+      "feature": "cusum_shift_magnitude",
+      "label": "CUSUM Drop Magnitude",
+      "importance": 0.0295
+    },
+    {
+      "feature": "ewma_flagged_count",
+      "label": "EWMA Flagged Weeks",
+      "importance": 0.0293
+    },
+    {
+      "feature": "a_composite_latest",
+      "label": "3-Week Z-Score Acceleration",
+      "importance": 0.0222
+    },
+    {
+      "feature": "z_assign_mean",
+      "label": "Cohort Assignment Z-Score",
+      "importance": 0.0219
+    },
+    {
+      "feature": "assign_mean",
+      "label": "Overall Assignment Score",
+      "importance": 0.021
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+"""Database repository layer with single-query joins (zero N+1 guarantees)."""

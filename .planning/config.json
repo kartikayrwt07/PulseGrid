@@ -1,0 +1,25 @@
+{
+  "project": "PulseGrid",
+  "version": "1.0.0",
+  "workflow": {
+    "auto_commit": true,
+    "require_approval_before_code": true,
+    "max_file_lines": 250,
+    "lint_on_phase_complete": true
+  },
+  "phases": {
+    "total": 8,
+    "current": 0,
+    "mvp_freeze_gate": 5
+  },
+  "stack": {
+    "backend": "FastAPI + SQLAlchemy 2.0 + SQLite WAL",
+    "frontend": "React + Vite + TypeScript + Tailwind + Recharts",
+    "ml": "scikit-learn + SHAP + scipy"
+  },
+  "ports": {
+    "backend": 8000,
+    "frontend_dev": 5173,
+    "frontend_preview": 4173
+  }
+}

@@ -1,0 +1,11 @@
+roll_no,student_name,subject_code,week,attended_sessions,total_sessions,assignment_score,internal_score
+STU-001,Aarav Kulkarni,MA101,10,2,3,64.0,61.0
+STU-001,Aarav Kulkarni,CS201,10,2,3,62.0,59.0
+STU-002,Meera Nair,MA101,10,3,3,95.0,41.0
+STU-002,Meera Nair,CS201,10,2,3,93.0,38.0
+STU-003,Rohan Deshmukh,CS301L,10,2,2,82.0,79.0
+STU-003,Rohan Deshmukh,CS301,10,3,3,80.0,78.0
+STU-004,Priya Sharma,MA101,10,3,3,86.0,84.0
+STU-004,Priya Sharma,CS201,10,3,3,88.0,85.0
+STU-005,Ishaan Rao,MA101,10,3,3,84.0,81.0
+STU-006,Ananya Patel,CS201,10,3,3,85.0,82.0
