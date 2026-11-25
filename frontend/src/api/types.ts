@@ -104,6 +104,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/dashboard/time-machine": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Dashboard Time Machine
+         * @description Return precomputed Week 4..active_week comparison of PulseGrid vs Naive Static.
+         */
+        get: operations["dashboard_time_machine_api_v1_dashboard_time_machine_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/simulate": {
         parameters: {
             query?: never;
@@ -346,6 +366,27 @@ export interface components {
             ewma_series: number[];
             /** Flagged Weeks */
             flagged_weeks: number[];
+        };
+        /** EngineWeekMetrics */
+        EngineWeekMetrics: {
+            /** Safe Count */
+            safe_count: number;
+            /** Watch Count */
+            watch_count: number;
+            /** At Risk Count */
+            at_risk_count: number;
+            /** Critical Count */
+            critical_count: number;
+            /** Flagged Count */
+            flagged_count: number;
+            /** False Alarms On Track */
+            false_alarms_on_track: number;
+            /** Silent Slipper Detected */
+            silent_slipper_detected: number;
+            /** Silent Slipper Total */
+            silent_slipper_total: number;
+            /** Aarav Detected */
+            aarav_detected: boolean;
         };
         /** FeatureImportanceEntry */
         FeatureImportanceEntry: {
@@ -618,6 +659,19 @@ export interface components {
             /** Feature Value */
             feature_value: number;
         };
+        /** ShockBanner */
+        ShockBanner: {
+            /** Subject Code */
+            subject_code: string;
+            /** Subject Name */
+            subject_name: string;
+            /** Week */
+            week: number;
+            /** Drop Pts */
+            drop_pts: number;
+            /** Message */
+            message: string;
+        };
         /** SimulateRequest */
         SimulateRequest: {
             /** Student Id */
@@ -797,6 +851,54 @@ export interface components {
             z_assign_mean: number;
             /** Z Internal Mean */
             z_internal_mean: number;
+        };
+        /** TimeMachinePoint */
+        TimeMachinePoint: {
+            /** Student Id */
+            student_id: number;
+            /** Roll No */
+            roll_no: string;
+            /** Name */
+            name: string;
+            /** Risk Score */
+            risk_score: number;
+            /** Naive Risk Score */
+            naive_risk_score: number;
+            /** Projected Score */
+            projected_score: number;
+            /** Risk Tier */
+            risk_tier: string;
+            /** Naive Tier */
+            naive_tier: string;
+            /** Archetype */
+            archetype: string;
+            /** Cusum Triggered */
+            cusum_triggered: boolean;
+            /** Naive Flagged */
+            naive_flagged: boolean;
+            /**
+             * Is Hero Aarav
+             * @default false
+             */
+            is_hero_aarav: boolean;
+        };
+        /** TimeMachineResponse */
+        TimeMachineResponse: {
+            /** Week */
+            week: number;
+            /** Active Week */
+            active_week: number;
+            /** Available Weeks */
+            available_weeks: number[];
+            shock_banner?: components["schemas"]["ShockBanner"] | null;
+            pulsegrid: components["schemas"]["EngineWeekMetrics"];
+            naive_static: components["schemas"]["EngineWeekMetrics"];
+            /** False Alarms Prevented */
+            false_alarms_prevented: number;
+            /** Delta Callout */
+            delta_callout: string;
+            /** Points */
+            points: components["schemas"]["TimeMachinePoint"][];
         };
         /** TokenResponse */
         TokenResponse: {
@@ -1059,6 +1161,37 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["DashboardSummaryResponse"];
+                };
+            };
+        };
+    };
+    dashboard_time_machine_api_v1_dashboard_time_machine_get: {
+        parameters: {
+            query?: {
+                week?: number | null;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TimeMachineResponse"];
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
                 };
             };
         };

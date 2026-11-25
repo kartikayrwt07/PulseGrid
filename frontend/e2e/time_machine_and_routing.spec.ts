@@ -4,12 +4,12 @@ test("URL-synced routing on refresh, inline intervention drawer, and Time Machin
   page,
 }) => {
   await page.goto("/faculty/students/STU-001");
-  await expect(page.getByText("Aarav Kulkarni")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Aarav Kulkarni" })).toBeVisible();
   await expect(page.getByText("CUSUM Change-Point")).toBeVisible();
 
   await page.reload();
   await expect(page).toHaveURL(/\/faculty\/students\/STU-001$/);
-  await expect(page.getByText("Aarav Kulkarni")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Aarav Kulkarni" })).toBeVisible();
 
   await page.getByRole("button", { name: "Log Intervention" }).click();
   await expect(page.getByRole("dialog", { name: "Log Faculty Intervention Drawer" })).toBeVisible();

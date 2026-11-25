@@ -20,8 +20,10 @@ venv/
 .pytest_cache/
 .ruff_cache/
 
-# ML large binary artifacts (keep .gitkeep and model_audit.json)
+# ML large binary / generated artifacts (keep .gitkeep, feature_names.json, and model_audit.json)
 backend/ml/artifacts/*.joblib
+backend/ml/artifacts/*.npy
+backend/ml/artifacts/cohort_training_weeks.csv
 
 # Node / Frontend
 node_modules/
